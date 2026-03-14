@@ -1,5 +1,5 @@
 import { useState, useMemo } from 'react';
-import { Search, Sun, Moon } from 'lucide-react';
+import { Search } from 'lucide-react';
 import { COMPANIES, CATEGORIES, DATA_DATE, type CategoryKey, type Company } from '@/data/stocks';
 import { catDotClass } from '@/lib/formatters';
 import StockCard from '@/components/StockCard';
@@ -11,7 +11,7 @@ const Index = () => {
   const [activeCategory, setActiveCategory] = useState<'all' | CategoryKey>('all');
   const [sortField, setSortField] = useState<SortField>('marketCap');
   const [sortAsc, setSortAsc] = useState(false);
-  const [isDark, setIsDark] = useState(true);
+  
 
   const dataDateFormatted = useMemo(() => {
     const d = new Date(DATA_DATE + 'T16:00:00-04:00');
@@ -40,10 +40,6 @@ const Index = () => {
     return items;
   }, [search, activeCategory, sortField, sortAsc]);
 
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    // Since we only have dark mode defined, this is cosmetic for now
-  };
 
   return (
     <div className="max-w-[430px] mx-auto px-4 min-h-screen">
@@ -53,13 +49,6 @@ const Index = () => {
           <h1 className="font-display text-2xl font-extrabold tracking-tight leading-tight">
             AI Picks & Shovels
           </h1>
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-sm text-muted-foreground hover:text-foreground hover:bg-surface2 transition-all"
-            aria-label="Toggle theme"
-          >
-            {isDark ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
         </div>
         <div className="flex items-center justify-between">
           <p className="text-muted-foreground text-xs font-medium tracking-wide">
