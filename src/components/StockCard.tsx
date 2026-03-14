@@ -9,7 +9,7 @@ const StockCard = ({ company: c }: StockCardProps) => {
   const cat = CATEGORIES[c.category];
 
   return (
-    <article className="relative bg-card rounded-lg overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.4),0_0_0_1px_hsl(var(--border))] hover:shadow-[0_8px_24px_rgba(0,0,0,0.5),0_0_0_1px_hsl(var(--border-hover))] hover:-translate-y-0.5 transition-all duration-200 flex flex-col gap-3 p-[1.125rem_1.25rem]">
+    <article className="relative bg-card rounded-lg overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.4),0_0_0_1px_hsl(var(--border))] flex flex-col gap-3 p-[1.125rem_1.25rem]">
       {/* Top accent bar */}
       <div className={`absolute top-0 left-0 right-0 h-[3px] ${catAccentClass(c.category)}`} />
 
