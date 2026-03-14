@@ -58,14 +58,6 @@ const StockCard = ({ company: c }: StockCardProps) => {
         })}
       </div>
 
-      {/* EPS row */}
-      <div className="flex justify-between items-center pt-1 border-t border-border">
-        <span className="text-xs text-muted-foreground font-medium">EPS (TTM)</span>
-        <span className={`font-mono-custom text-sm font-medium tabular-nums ${c.eps != null && c.eps < 0 ? 'text-val-red' : ''}`}>
-          {fmtEps(c.eps)}
-        </span>
-      </div>
-
       {/* Thesis */}
       <p className="text-xs text-muted-foreground leading-relaxed italic">{c.thesis}</p>
     </article>
