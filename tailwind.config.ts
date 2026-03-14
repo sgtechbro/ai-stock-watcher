@@ -38,6 +38,7 @@ export default {
         "cat-robotics": "hsl(var(--cat-robotics))",
         "cat-bigdata": "hsl(var(--cat-bigdata))",
         "cat-cloud": "hsl(var(--cat-cloud))",
+        "cat-mag7": "hsl(var(--cat-mag7))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",

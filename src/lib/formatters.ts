@@ -86,6 +86,7 @@ const CAT_DOT_MAP: Record<string, string> = {
   robotics: 'bg-cat-robotics',
   bigdata: 'bg-cat-bigdata',
   cloud: 'bg-cat-cloud',
+  mag7: 'bg-cat-mag7',
 };
 
 export function catDotClass(category: string): string {
