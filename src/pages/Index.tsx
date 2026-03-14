@@ -11,7 +11,7 @@ const Index = () => {
   const [activeCategory, setActiveCategory] = useState<'all' | CategoryKey>('all');
   const [sortField, setSortField] = useState<SortField>('marketCap');
   const [sortAsc, setSortAsc] = useState(false);
-  const [isDark, setIsDark] = useState(true);
+  
 
   const dataDateFormatted = useMemo(() => {
     const d = new Date(DATA_DATE + 'T16:00:00-04:00');
