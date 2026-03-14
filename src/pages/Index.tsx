@@ -21,7 +21,7 @@ const Index = () => {
   const filtered = useMemo(() => {
     const q = search.toLowerCase().trim();
     let items = COMPANIES.filter((c) => {
-      if (activeCategory !== 'all' && c.category !== activeCategory) return false;
+      if (activeCategory !== 'all' && !c.categories.includes(activeCategory)) return false;
       if (q && !c.ticker.toLowerCase().includes(q) && !c.name.toLowerCase().includes(q)) return false;
       return true;
     });

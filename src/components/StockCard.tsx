@@ -6,12 +6,13 @@ interface StockCardProps {
 }
 
 const StockCard = ({ company: c }: StockCardProps) => {
-  const cat = CATEGORIES[c.category];
+  const primaryCat = c.categories[0];
+  const cat = CATEGORIES[primaryCat];
 
   return (
     <article className="relative bg-card rounded-lg overflow-hidden shadow-[0_1px_3px_rgba(0,0,0,0.4),0_0_0_1px_hsl(var(--border))] flex flex-col gap-3 p-[1.125rem_1.25rem]">
       {/* Top accent bar */}
-      <div className={`absolute top-0 left-0 right-0 h-[3px] ${catAccentClass(c.category)}`} />
+      <div className={`absolute top-0 left-0 right-0 h-[3px] ${catAccentClass(primaryCat)}`} />
 
       {/* Header: ticker + category */}
       <div className="flex justify-between items-start gap-2">
@@ -28,9 +29,13 @@ const StockCard = ({ company: c }: StockCardProps) => {
           </div>
           <div className="text-[14px] text-muted-foreground leading-tight max-w-[220px]">{c.name}</div>
         </div>
-        <span className={`text-xs px-2 py-0.5 rounded-lg font-medium whitespace-nowrap ${catBadgeClass(c.category)}`}>
-          {cat.short}
-        </span>
+        <div className="flex flex-wrap gap-1 justify-end">
+          {c.categories.map((catKey) => (
+            <span key={catKey} className={`text-xs px-2 py-0.5 rounded-lg font-medium whitespace-nowrap ${catBadgeClass(catKey)}`}>
+              {CATEGORIES[catKey].short}
+            </span>
+          ))}
+        </div>
       </div>
 
       {/* Price + Market Cap */}

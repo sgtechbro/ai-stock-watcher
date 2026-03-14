@@ -56,6 +56,7 @@ const CAT_BG_MAP: Record<string, string> = {
   robotics: 'bg-cat-robotics/15 text-cat-robotics',
   bigdata: 'bg-cat-bigdata/15 text-cat-bigdata',
   cloud: 'bg-cat-cloud/15 text-cat-cloud',
+  mag7: 'bg-cat-mag7/15 text-cat-mag7',
 };
 
 export function catBadgeClass(category: string): string {
@@ -70,6 +71,7 @@ const CAT_ACCENT_MAP: Record<string, string> = {
   robotics: 'bg-cat-robotics',
   bigdata: 'bg-cat-bigdata',
   cloud: 'bg-cat-cloud',
+  mag7: 'bg-cat-mag7',
 };
 
 export function catAccentClass(category: string): string {
@@ -84,6 +86,7 @@ const CAT_DOT_MAP: Record<string, string> = {
   robotics: 'bg-cat-robotics',
   bigdata: 'bg-cat-bigdata',
   cloud: 'bg-cat-cloud',
+  mag7: 'bg-cat-mag7',
 };
 
 export function catDotClass(category: string): string {
