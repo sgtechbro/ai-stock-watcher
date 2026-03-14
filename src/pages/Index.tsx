@@ -98,8 +98,8 @@ const Index = () => {
       </nav>
 
       {/* Controls */}
-      <div className="flex items-center gap-4 py-3 flex-wrap">
-        <div className="flex items-center gap-2 px-3 py-2 bg-card border border-border rounded-md flex-1 min-w-[200px] max-w-[360px] focus-within:border-primary transition-colors">
+      <div className="flex flex-col gap-3 py-3">
+        <div className="flex items-center gap-2 px-3 py-2 bg-card border border-border rounded-md w-full focus-within:border-primary transition-colors">
           <Search size={16} className="text-text-faint shrink-0" />
           <input
             type="text"
