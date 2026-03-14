@@ -49,13 +49,6 @@ const Index = () => {
           <h1 className="font-display text-2xl font-extrabold tracking-tight leading-tight">
             AI Picks & Shovels
           </h1>
-          <button
-            onClick={toggleTheme}
-            className="p-2 rounded-sm text-muted-foreground hover:text-foreground hover:bg-surface2 transition-all"
-            aria-label="Toggle theme"
-          >
-            {isDark ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
         </div>
         <div className="flex items-center justify-between">
           <p className="text-muted-foreground text-xs font-medium tracking-wide">
