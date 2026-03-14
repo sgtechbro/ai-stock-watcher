@@ -26,8 +26,8 @@ const StockGridCard = ({ company: c, sortField, isExpanded, onToggle }: StockGri
     const rating = rateMultiple(sortField, val);
     return (
       <div className="text-right shrink-0">
-        <div className="text-[9px] uppercase tracking-wider text-muted-foreground font-semibold">{SORT_LABELS[sortField]}</div>
-        <div className={`font-mono-custom text-xs font-medium tabular-nums ${valColorClass(rating)}`}>{fmtMultiple(val)}</div>
+        <div className="text-[8px] uppercase tracking-wider text-muted-foreground font-semibold leading-none">{SORT_LABELS[sortField]}</div>
+        <div className={`font-mono-custom text-[10px] font-medium tabular-nums leading-tight ${valColorClass(rating)}`}>{fmtMultiple(val)}</div>
       </div>
     );
   };
