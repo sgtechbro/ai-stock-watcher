@@ -117,6 +117,7 @@ const Index = () => {
           >
             {sortAsc ? '↑' : '↓'}
           </button>
+          <span className="font-mono-custom text-[10px] text-text-faint ml-auto">{dataDateFormatted}</span>
         </div>
       </div>
 
