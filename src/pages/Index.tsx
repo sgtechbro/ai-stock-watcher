@@ -40,10 +40,6 @@ const Index = () => {
     return items;
   }, [search, activeCategory, sortField, sortAsc]);
 
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    // Since we only have dark mode defined, this is cosmetic for now
-  };
 
   return (
     <div className="max-w-[430px] mx-auto px-4 min-h-screen">
