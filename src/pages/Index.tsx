@@ -44,7 +44,7 @@ const Index = () => {
   return (
     <div className="max-w-[430px] mx-auto px-4 min-h-screen">
       {/* Header */}
-      <header className="flex flex-col gap-2 py-4 pb-3 border-b border-border">
+      <header className="flex flex-col gap-2 pt-8 pb-3 border-b border-border">
         <div className="flex items-center justify-between">
           <h1 className="font-display text-[28px] font-extrabold tracking-tight leading-tight">
             AI Picks & Shovels
@@ -58,7 +58,7 @@ const Index = () => {
       </header>
 
       {/* Category Nav */}
-      <nav className="flex flex-wrap gap-1.5 py-4">
+      <nav className="flex flex-wrap gap-1.5 py-4 max-h-[4.5rem] overflow-hidden">
         <button
           onClick={() => setActiveCategory('all')}
           className={`inline-flex items-center gap-1 text-[11px] font-medium px-2.5 py-1 rounded-lg border border-transparent transition-all ${
