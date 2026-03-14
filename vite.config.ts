@@ -4,7 +4,7 @@ import path from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig(async ({ mode }) => {
-  const plugins = [react()];
+  const plugins = [...react()];
 
   if (mode === "development") {
     try {
