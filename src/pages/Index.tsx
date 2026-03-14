@@ -126,9 +126,15 @@ const Index = () => {
       </div>
 
       {/* Grid */}
-      <main className="grid grid-cols-1 gap-3 pb-8">
+      <main className="grid grid-cols-3 gap-2 pb-8">
         {filtered.map((c) => (
-          <StockCard key={c.ticker} company={c} />
+          <StockGridCard
+            key={c.ticker}
+            company={c}
+            sortField={sortField}
+            isExpanded={expandedTicker === c.ticker}
+            onToggle={() => handleToggle(c.ticker)}
+          />
         ))}
       </main>
 
