@@ -59,7 +59,7 @@ const StockCard = ({ company: c }: StockCardProps) => {
       </div>
 
       {/* Thesis */}
-      <p className="text-sm text-muted-foreground leading-relaxed italic font-semibold">{c.thesis}</p>
+      <p className="text-[12.5px] text-muted-foreground leading-relaxed italic font-semibold">{c.thesis}</p>
     </article>
   );
 };
