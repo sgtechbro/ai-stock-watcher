@@ -59,10 +59,10 @@ const Index = () => {
       </header>
 
       {/* Category Nav */}
-      <nav className="flex gap-2 py-4 overflow-x-auto scrollbar-none">
+      <nav className="flex flex-wrap gap-2 py-4">
         <button
           onClick={() => setActiveCategory('all')}
-          className={`inline-flex items-center gap-1.5 whitespace-nowrap text-xs font-medium px-3.5 py-1.5 rounded-lg border border-transparent transition-all ${
+          className={`inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg border border-transparent transition-all ${
             activeCategory === 'all'
               ? 'bg-primary text-primary-foreground font-semibold'
               : 'bg-surface2 text-muted-foreground hover:text-foreground hover:bg-surface3'
@@ -74,14 +74,14 @@ const Index = () => {
           <button
             key={key}
             onClick={() => setActiveCategory(key)}
-            className={`inline-flex items-center gap-1.5 whitespace-nowrap text-xs font-medium px-3.5 py-1.5 rounded-lg border border-transparent transition-all ${
+            className={`inline-flex items-center gap-1.5 text-xs font-medium px-3 py-1.5 rounded-lg border border-transparent transition-all ${
               activeCategory === key
                 ? 'bg-primary text-primary-foreground font-semibold'
                 : 'bg-surface2 text-muted-foreground hover:text-foreground hover:bg-surface3'
             }`}
           >
             <span className={`w-2 h-2 rounded-full shrink-0 ${catDotClass(key)}`} />
-            {val.label}
+            {val.short}
           </button>
         ))}
       </nav>
