@@ -44,7 +44,7 @@ const Index = () => {
   return (
     <div className="max-w-[430px] mx-auto px-4 min-h-screen">
       {/* Header */}
-      <header className="flex flex-col gap-2 py-4 pb-3 border-b border-border">
+      <header className="flex flex-col gap-2 pt-8 pb-3 border-b border-border">
         <div className="flex items-center justify-between">
           <h1 className="font-display text-[28px] font-extrabold tracking-tight leading-tight">
             AI Picks & Shovels
