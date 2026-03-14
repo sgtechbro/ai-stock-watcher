@@ -1,4 +1,4 @@
-export const DATA_DATE = '2026-03-12';
+export const DATA_DATE = '2026-03-13';
 
 export type CategoryKey = 'chips' | 'equipment' | 'datacenter' | 'energy' | 'robotics' | 'bigdata' | 'cloud' | 'mag7';
 
