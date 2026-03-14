@@ -26,8 +26,8 @@ const StockGridCard = ({ company: c, sortField, isExpanded, onToggle }: StockGri
     const rating = rateMultiple(sortField, val);
     return (
       <div className="text-right shrink-0">
-        <div className="text-[9px] uppercase tracking-wider text-muted-foreground font-semibold">{SORT_LABELS[sortField]}</div>
-        <div className={`font-mono-custom text-xs font-medium tabular-nums ${valColorClass(rating)}`}>{fmtMultiple(val)}</div>
+        <div className="text-[8px] uppercase tracking-wider text-muted-foreground font-semibold leading-none">{SORT_LABELS[sortField]}</div>
+        <div className={`font-mono-custom text-[10px] font-medium tabular-nums leading-tight ${valColorClass(rating)}`}>{fmtMultiple(val)}</div>
       </div>
     );
   };
@@ -40,28 +40,28 @@ const StockGridCard = ({ company: c, sortField, isExpanded, onToggle }: StockGri
       {/* Top accent bar */}
       <div className={`h-[2px] ${catAccentClass(primaryCat)}`} />
 
-      {/* Compact view — 3 columns: info | price | metric */}
-      <div className="p-2 flex items-center gap-1.5">
-        {/* Left: ticker + categories */}
-        <div className="flex flex-col gap-0.5 min-w-0 flex-1">
-          <span className="font-mono-custom text-sm font-semibold tracking-tight text-foreground leading-none">{c.ticker}</span>
-          <div className="flex flex-wrap gap-0.5">
-            {c.categories.map((catKey) => (
-              <span key={catKey} className={`text-[9px] px-1 py-0 rounded font-medium whitespace-nowrap leading-[16px] ${catBadgeClass(catKey)}`}>
-                {CATEGORIES[catKey].short}
-              </span>
-            ))}
-          </div>
+      {/* Compact view — stacked for tight spaces */}
+      <div className="p-1.5 flex flex-col gap-1">
+        {/* Row 1: ticker + price */}
+        <div className="flex items-center justify-between gap-1">
+          <span className="font-mono-custom text-[11px] font-semibold tracking-tight text-foreground leading-none truncate">{c.ticker}</span>
+          <span className="font-mono-custom text-[11px] font-semibold tabular-nums text-foreground leading-none shrink-0">{fmtPrice(c.price)}</span>
         </div>
 
-        {/* Middle: price + mcap */}
-        <div className="text-center shrink-0">
-          <div className="font-mono-custom text-sm font-semibold tabular-nums text-foreground leading-none">{fmtPrice(c.price)}</div>
-          <div className="text-[10px] text-muted-foreground font-mono-custom tabular-nums">{fmtMcap(c.marketCap)}</div>
+        {/* Row 2: categories */}
+        <div className="flex flex-wrap gap-0.5">
+          {c.categories.map((catKey) => (
+            <span key={catKey} className={`text-[8px] px-1 py-0 rounded font-medium whitespace-nowrap leading-[14px] ${catBadgeClass(catKey)}`}>
+              {CATEGORIES[catKey].short}
+            </span>
+          ))}
         </div>
 
-        {/* Right: valuation metric */}
-        {getMetricDisplay()}
+        {/* Row 3: mcap + metric */}
+        <div className="flex items-end justify-between gap-1">
+          <span className="text-[9px] text-muted-foreground font-mono-custom tabular-nums">{fmtMcap(c.marketCap)}</span>
+          {getMetricDisplay()}
+        </div>
       </div>
 
       {/* Expanded details */}
