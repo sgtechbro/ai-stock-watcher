@@ -46,7 +46,7 @@ const Index = () => {
   };
 
   return (
-    <div className="max-w-[1440px] mx-auto px-4 md:px-8">
+    <div className="max-w-[430px] mx-auto px-4 min-h-screen">
       {/* Header */}
       <header className="flex items-center justify-between py-6 pb-4 border-b border-border flex-wrap gap-4">
         <div>
