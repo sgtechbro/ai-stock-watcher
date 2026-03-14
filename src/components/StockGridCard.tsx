@@ -20,15 +20,15 @@ const SORT_LABELS: Record<string, string> = {
 const StockGridCard = ({ company: c, sortField, isExpanded, onToggle }: StockGridCardProps) => {
   const primaryCat = c.categories[0];
 
-  // Get the relevant metric value for the selected sort
   const getMetricDisplay = () => {
     if (sortField === 'name' || sortField === 'marketCap') return null;
     const val = (c as any)[sortField] as number | null;
     const rating = rateMultiple(sortField, val);
     return (
-      <span className={`font-mono-custom text-xs font-medium tabular-nums ${valColorClass(rating)}`}>
-        {SORT_LABELS[sortField]}: {fmtMultiple(val)}
-      </span>
+      <div className="text-right shrink-0">
+        <div className="text-[9px] uppercase tracking-wider text-muted-foreground font-semibold">{SORT_LABELS[sortField]}</div>
+        <div className={`font-mono-custom text-xs font-medium tabular-nums ${valColorClass(rating)}`}>{fmtMultiple(val)}</div>
+      </div>
     );
   };
 
@@ -40,32 +40,28 @@ const StockGridCard = ({ company: c, sortField, isExpanded, onToggle }: StockGri
       {/* Top accent bar */}
       <div className={`h-[2px] ${catAccentClass(primaryCat)}`} />
 
-      {/* Compact view */}
-      <div className="p-2.5 flex flex-col gap-1.5">
-        {/* Ticker */}
-        <div className="flex items-center justify-between gap-1">
-          <span className="font-mono-custom text-sm font-semibold tracking-tight text-foreground">
-            {c.ticker}
-          </span>
-          <span className="font-mono-custom text-sm font-semibold tabular-nums text-foreground">
-            {fmtPrice(c.price)}
-          </span>
+      {/* Compact view — 3 columns: info | price | metric */}
+      <div className="p-2 flex items-center gap-1.5">
+        {/* Left: ticker + categories */}
+        <div className="flex flex-col gap-0.5 min-w-0 flex-1">
+          <span className="font-mono-custom text-sm font-semibold tracking-tight text-foreground leading-none">{c.ticker}</span>
+          <div className="flex flex-wrap gap-0.5">
+            {c.categories.map((catKey) => (
+              <span key={catKey} className={`text-[9px] px-1 py-0 rounded font-medium whitespace-nowrap leading-[16px] ${catBadgeClass(catKey)}`}>
+                {CATEGORIES[catKey].short}
+              </span>
+            ))}
+          </div>
         </div>
 
-        {/* Categories */}
-        <div className="flex flex-wrap gap-0.5">
-          {c.categories.map((catKey) => (
-            <span key={catKey} className={`text-[9px] px-1.5 py-0 rounded font-medium whitespace-nowrap leading-[18px] ${catBadgeClass(catKey)}`}>
-              {CATEGORIES[catKey].short}
-            </span>
-          ))}
+        {/* Middle: price + mcap */}
+        <div className="text-center shrink-0">
+          <div className="font-mono-custom text-sm font-semibold tabular-nums text-foreground leading-none">{fmtPrice(c.price)}</div>
+          <div className="text-[10px] text-muted-foreground font-mono-custom tabular-nums">{fmtMcap(c.marketCap)}</div>
         </div>
 
-        {/* MCap + sort metric */}
-        <div className="flex items-center justify-between gap-1">
-          <span className="text-[10px] text-muted-foreground font-mono-custom tabular-nums">{fmtMcap(c.marketCap)}</span>
-          {getMetricDisplay()}
-        </div>
+        {/* Right: valuation metric */}
+        {getMetricDisplay()}
       </div>
 
       {/* Expanded details */}
