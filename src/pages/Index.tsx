@@ -140,7 +140,7 @@ const Index = () => {
       </main>
 
       {/* Footer */}
-      <footer className="py-8 border-t border-border flex justify-between items-center flex-wrap gap-2">
+      <footer className="py-6 border-t border-border">
         <p className="text-xs text-text-faint">
           Data sourced from{' '}
           <a href="https://perplexity.ai/finance" target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary/80">
