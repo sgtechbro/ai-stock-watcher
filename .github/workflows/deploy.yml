@@ -27,8 +27,10 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install dependencies
-        run: npm install --ignore-scripts
+      - name: Remove private packages and install
+        run: |
+          npx json -I -f package.json -e 'delete this.devDependencies["lovable-tagger"]'
+          npm install
 
       - name: Build
         run: npm run build
