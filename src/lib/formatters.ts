@@ -71,6 +71,7 @@ const CAT_ACCENT_MAP: Record<string, string> = {
   robotics: 'bg-cat-robotics',
   bigdata: 'bg-cat-bigdata',
   cloud: 'bg-cat-cloud',
+  mag7: 'bg-cat-mag7',
 };
 
 export function catAccentClass(category: string): string {
