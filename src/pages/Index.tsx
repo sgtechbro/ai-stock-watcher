@@ -15,7 +15,7 @@ const Index = () => {
 
   const dataDateFormatted = useMemo(() => {
     const d = new Date(DATA_DATE + 'T16:00:00-04:00');
-    return 'Data as of ' + d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    return 'Data: ' + d.getDate() + ' ' + d.toLocaleDateString('en-US', { month: 'short' }) + ' ' + d.getFullYear();
   }, []);
 
   const filtered = useMemo(() => {
