@@ -58,7 +58,7 @@ const Index = () => {
       </header>
 
       {/* Category Nav */}
-      <nav className="flex flex-wrap gap-1.5 py-4 max-h-[4.5rem] overflow-hidden">
+      <nav className="flex flex-wrap gap-1.5 py-4">
         <button
           onClick={() => setActiveCategory('all')}
           className={`inline-flex items-center gap-1 text-[11px] font-medium px-2.5 py-1 rounded-lg border border-transparent transition-all ${
