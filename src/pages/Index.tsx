@@ -1,8 +1,8 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { Search } from 'lucide-react';
 import { COMPANIES, CATEGORIES, DATA_DATE, type CategoryKey, type Company } from '@/data/stocks';
 import { catDotClass } from '@/lib/formatters';
-import StockCard from '@/components/StockCard';
+import StockGridCard from '@/components/StockGridCard';
 
 type SortField = 'marketCap' | 'pe' | 'fwdPe' | 'ps' | 'evEbitda' | 'name';
 
