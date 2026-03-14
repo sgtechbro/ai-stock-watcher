@@ -48,24 +48,24 @@ const Index = () => {
   return (
     <div className="max-w-[430px] mx-auto px-4 min-h-screen">
       {/* Header */}
-      <header className="flex items-center justify-between py-6 pb-4 border-b border-border flex-wrap gap-4">
-        <div>
-          <h1 className="font-display text-3xl md:text-5xl font-extrabold tracking-tight leading-tight">
+      <header className="flex flex-col gap-2 py-4 pb-3 border-b border-border">
+        <div className="flex items-center justify-between">
+          <h1 className="font-display text-2xl font-extrabold tracking-tight leading-tight">
             AI Picks & Shovels
           </h1>
-          <p className="text-muted-foreground text-sm md:text-base font-medium tracking-wide mt-0.5">
-            What's On Your Shopping List?
-          </p>
-        </div>
-        <div className="flex items-center gap-4">
-          <span className="font-mono-custom text-xs text-text-faint">{dataDateFormatted}</span>
           <button
             onClick={toggleTheme}
             className="p-2 rounded-sm text-muted-foreground hover:text-foreground hover:bg-surface2 transition-all"
             aria-label="Toggle theme"
           >
-            {isDark ? <Sun size={20} /> : <Moon size={20} />}
+            {isDark ? <Sun size={18} /> : <Moon size={18} />}
           </button>
+        </div>
+        <div className="flex items-center justify-between">
+          <p className="text-muted-foreground text-xs font-medium tracking-wide">
+            What's On Your Shopping List?
+          </p>
+          <span className="font-mono-custom text-[10px] text-text-faint">{dataDateFormatted}</span>
         </div>
       </header>
 
