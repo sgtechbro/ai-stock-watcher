@@ -25,11 +25,11 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: '22'
 
-      - name: Remove private packages and install
+      - name: Remove private package and install
         run: |
-          npx json -I -f package.json -e 'delete this.devDependencies["lovable-tagger"]'
+          npm pkg delete devDependencies.lovable-tagger
           npm install
 
       - name: Build
