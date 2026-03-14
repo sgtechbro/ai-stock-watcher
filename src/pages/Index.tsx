@@ -1,8 +1,8 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useCallback } from 'react';
 import { Search } from 'lucide-react';
 import { COMPANIES, CATEGORIES, DATA_DATE, type CategoryKey, type Company } from '@/data/stocks';
 import { catDotClass } from '@/lib/formatters';
-import StockCard from '@/components/StockCard';
+import StockGridCard from '@/components/StockGridCard';
 
 type SortField = 'marketCap' | 'pe' | 'fwdPe' | 'ps' | 'evEbitda' | 'name';
 
@@ -11,7 +11,11 @@ const Index = () => {
   const [activeCategory, setActiveCategory] = useState<'all' | CategoryKey>('all');
   const [sortField, setSortField] = useState<SortField>('marketCap');
   const [sortAsc, setSortAsc] = useState(false);
-  
+  const [expandedTicker, setExpandedTicker] = useState<string | null>(null);
+
+  const handleToggle = useCallback((ticker: string) => {
+    setExpandedTicker((prev) => (prev === ticker ? null : ticker));
+  }, []);
 
   const dataDateFormatted = useMemo(() => {
     const d = new Date(DATA_DATE + 'T16:00:00-04:00');
@@ -42,7 +46,7 @@ const Index = () => {
 
 
   return (
-    <div className="max-w-[430px] mx-auto px-4 min-h-screen">
+    <div className="max-w-[720px] mx-auto px-4 min-h-screen">
       {/* Header */}
       <header className="flex flex-col gap-2 py-4 pb-3 border-b border-border">
         <div className="flex items-center justify-between">
@@ -122,9 +126,15 @@ const Index = () => {
       </div>
 
       {/* Grid */}
-      <main className="grid grid-cols-1 gap-3 pb-8">
+      <main className="grid grid-cols-3 gap-2 pb-8">
         {filtered.map((c) => (
-          <StockCard key={c.ticker} company={c} />
+          <StockGridCard
+            key={c.ticker}
+            company={c}
+            sortField={sortField}
+            isExpanded={expandedTicker === c.ticker}
+            onToggle={() => handleToggle(c.ticker)}
+          />
         ))}
       </main>
 
