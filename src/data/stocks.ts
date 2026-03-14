@@ -1,4 +1,4 @@
-export const DATA_DATE = '2026-03-12';
+export const DATA_DATE = '2026-03-13';
 
 export type CategoryKey = 'chips' | 'equipment' | 'datacenter' | 'energy' | 'robotics' | 'bigdata' | 'cloud' | 'mag7';
 
@@ -64,11 +64,11 @@ export const COMPANIES: Company[] = [
   { ticker: 'VST', name: 'Vistra Corp.', categories: ['energy'], price: 160.38, marketCap: 54.34e9, pe: 73.23, fwdPe: 9.89, ps: 2.98, evEbitda: 16.99, eps: 2.19, thesis: 'Diversified power generation; nuclear + natural gas for AI data centers' },
   { ticker: 'GEV', name: 'GE Vernova', categories: ['energy'], price: 834.06, marketCap: 226.30e9, pe: 47.1, fwdPe: 44.42, ps: 5.92, evEbitda: 35.05, eps: 17.71, thesis: 'Power generation equipment; gas turbines & grid solutions for AI demand' },
   { ticker: 'PWR', name: 'Quanta Services', categories: ['energy'], price: 569.01, marketCap: 85.13e9, pe: 83.31, fwdPe: 27.23, ps: 3.63, evEbitda: 21.89, eps: 6.83, thesis: 'Infrastructure contractor; builds power lines & data center electrical' },
-  { ticker: 'TSLA', name: 'Tesla, Inc.', categories: ['robotics', 'mag7'], price: 249.98, marketCap: 803.20e9, pe: 95.42, fwdPe: 79.99, ps: 8.28, evEbitda: 52.78, eps: 2.62, thesis: 'AI-driven autonomy (FSD), Optimus humanoid robot, energy & EV leader' },
+  { ticker: 'TSLA', name: 'Tesla, Inc.', categories: ['robotics', 'mag7'], price: 391.20, marketCap: 1.47e12, pe: 386.91, fwdPe: 189.17, ps: 15.48, evEbitda: 136.97, eps: 1.08, thesis: 'AI-driven autonomy (FSD), Optimus humanoid robot, energy & EV leader' },
   { ticker: 'ISRG', name: 'Intuitive Surgical', categories: ['robotics'], price: 479.44, marketCap: 170.26e9, pe: 60.77, fwdPe: 39.94, ps: 19.93, evEbitda: 48.99, eps: 7.89, thesis: 'Surgical robotics leader; AI-enhanced da Vinci robotic systems' },
   { ticker: 'ROK', name: 'Rockwell Automation', categories: ['robotics'], price: 357.9, marketCap: 40.24e9, pe: 40.9, fwdPe: 23.86, ps: 4.53, evEbitda: 22.89, eps: 8.75, thesis: 'Industrial automation & AI-powered smart manufacturing' },
   { ticker: 'TER', name: 'Teradyne', categories: ['robotics'], price: 289.01, marketCap: 45.25e9, pe: 83.53, fwdPe: 40.42, ps: 14.62, evEbitda: 45.08, eps: 3.46, thesis: 'Test equipment for semiconductors + Universal Robots (cobots)' },
-  { ticker: 'META', name: 'Meta Platforms', categories: ['bigdata', 'mag7'], price: 585.75, marketCap: 1.482e12, pe: 22.94, fwdPe: 19.82, ps: 9.06, evEbitda: 14.89, eps: 25.53, thesis: 'Llama open-source AI models; massive AI infrastructure investment; ads AI' },
+  { ticker: 'META', name: 'Meta Platforms', categories: ['bigdata', 'mag7'], price: 613.71, marketCap: 1.55e12, pe: 26.13, fwdPe: 20.34, ps: 7.72, evEbitda: 15.27, eps: 23.49, thesis: 'Llama open-source AI models; massive AI infrastructure investment; ads AI' },
   { ticker: 'PLTR', name: 'Palantir Technologies', categories: ['bigdata'], price: 153.94, marketCap: 352.75e9, pe: 240.53, fwdPe: 99.06, ps: 54.55, evEbitda: 161.12, eps: 0.64, thesis: 'AI/ML analytics platform for gov & enterprise; AIP adoption accelerating' },
   { ticker: 'SNOW', name: 'Snowflake', categories: ['bigdata'], price: 177.43, marketCap: 60.71e9, pe: null, fwdPe: 63.58, ps: 14.73, evEbitda: null, eps: -3.95, thesis: 'Cloud data warehouse; AI workloads need massive structured data' },
   { ticker: 'MDB', name: 'MongoDB', categories: ['bigdata'], price: 259.86, marketCap: 21.15e9, pe: null, fwdPe: 36.11, ps: 10.17, evEbitda: null, eps: -0.89, thesis: 'Document database for AI apps; Atlas vector search for LLM pipelines' },
