@@ -15,7 +15,7 @@ const Index = () => {
 
   const dataDateFormatted = useMemo(() => {
     const d = new Date(DATA_DATE + 'T16:00:00-04:00');
-    return 'Data as of ' + d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    return 'Data: ' + d.getDate() + ' ' + d.toLocaleDateString('en-US', { month: 'short' }) + ' ' + d.getFullYear();
   }, []);
 
   const filtered = useMemo(() => {
@@ -54,7 +54,6 @@ const Index = () => {
           <p className="text-muted-foreground text-[14px] font-medium tracking-wide">
             What's On Your Shopping List?
           </p>
-          <span className="font-mono-custom text-[10px] text-text-faint">{dataDateFormatted}</span>
         </div>
       </header>
 
@@ -118,6 +117,7 @@ const Index = () => {
           >
             {sortAsc ? '↑' : '↓'}
           </button>
+          <span className="font-mono-custom text-[10px] text-text-faint ml-auto">{dataDateFormatted}</span>
         </div>
       </div>
 
