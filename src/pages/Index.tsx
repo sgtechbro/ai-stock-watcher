@@ -51,7 +51,7 @@ const Index = () => {
           </h1>
         </div>
         <div className="flex items-center justify-between">
-          <p className="text-muted-foreground text-xs font-medium tracking-wide">
+          <p className="text-muted-foreground text-[14px] font-medium tracking-wide">
             What's On Your Shopping List?
           </p>
           <span className="font-mono-custom text-[10px] text-text-faint">{dataDateFormatted}</span>
